@@ -8,13 +8,13 @@ else:
     from pip._internal.download import PipSession
 
 
-def parse(filepath):
+def parse(filepath, links=False):
     """Returns a list of strings with the requirments registered in the file"""
     requirements = []
     for lib in parse_requirements(filepath, session=PipSession()):
-        if lib.req is None:
-            requirements.append(lib.link.url)
-        else:
+        if links:
+            if hasattr(lib.link, 'url'):
+                requirements.append(lib.link.url)
+        elif lib.req is not None:
             requirements.append(str(lib.req))
     return requirements
-
