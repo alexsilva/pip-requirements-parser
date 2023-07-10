@@ -19,6 +19,8 @@ def parse(filepath, links=False):
     for lib in parse_requirements(filepath, session=PipSession()):
         if links and hasattr(lib.link, 'url'):
             requirements.append(lib.link.url)
-        elif lib.req is not None:
+        elif hasattr(lib, "req") and lib.req is not None:
             requirements.append(str(lib.req))
+        elif hasattr(lib, "requirement") and lib.requirement is not None:
+            requirements.append(str(lib.requirement))
     return requirements
