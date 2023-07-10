@@ -6,7 +6,7 @@ setup(
     url='https://github.com/alexsilva/pip-requirements-parser',
     license='MIT',
     author='alex',
-    author_email='geniofuturo@gmail.com',
+    author_email='alex@fabricadigital.com.br',
     description='Gets the list of requirements in requirements.txt',
     include_package_data=True,
     py_modules=["requirements_parser"]
