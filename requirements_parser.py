@@ -14,7 +14,7 @@ else:
 
 
 def parse(filepath, links=False):
-    """Returns a list of strings with the requirments registered in the file"""
+    """Returns a list of strings with the requirements registered in the file"""
     requirements = []
     for lib in parse_requirements(filepath, session=PipSession()):
         if links and hasattr(lib.link, 'url'):
