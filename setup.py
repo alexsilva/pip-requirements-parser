@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pip-requirements-parser',
-    version='2.0.0',
+    version='2.0.1',
     url='https://github.com/alexsilva/pip-requirements-parser',
     license='MIT',
     author='alex',
